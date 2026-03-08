@@ -1,0 +1,33 @@
+/* ============================================
+   STATUS BAR STYLES
+   ============================================ */
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--status-bg);
+  border: 1px solid var(--status-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.status-bar__icon {
+  font-size: 1.2rem;
+}
+
+.status-bar__text {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--status-color);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .status-bar__text {
+    font-size: 0.9rem;
+  }
+}

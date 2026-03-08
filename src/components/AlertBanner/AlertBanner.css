@@ -1,0 +1,50 @@
+/* ============================================
+   ALERT BANNER STYLES
+   ============================================ */
+
+/* Danger flash overlay */
+.alert-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(244, 67, 54, 0.15);
+  animation: redFlash 0.8s ease infinite;
+  pointer-events: none;
+}
+
+/* Banner bar */
+.alert-banner {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  animation: slideUp 0.3s ease;
+}
+
+.alert-banner--danger {
+  background: rgba(244, 67, 54, 0.9);
+  color: white;
+  animation: slideUp 0.3s ease, shake 0.5s ease;
+}
+
+.alert-banner--warning {
+  background: rgba(255, 152, 0, 0.9);
+  color: #000;
+}
+
+.alert-banner__icon {
+  font-size: 1.3rem;
+}
+
+.alert-banner__text {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
