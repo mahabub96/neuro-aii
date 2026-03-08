@@ -1,0 +1,85 @@
+/* ============================================
+   IMAGE UPLOADER STYLES
+   ============================================ */
+
+.uploader {
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploader:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.uploader--dragging {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  transform: scale(1.01);
+}
+
+/* Placeholder content */
+.uploader__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.uploader__icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+.uploader__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.uploader__sublabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+/* Preview state */
+.uploader__preview {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.uploader__image {
+  max-height: 300px;
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.uploader__reset {
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.uploader__reset:hover {
+  background: rgba(244, 67, 54, 0.2);
+  color: var(--color-alert-red);
+}

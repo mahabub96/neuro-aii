@@ -1,0 +1,102 @@
+/* ============================================
+   LIVE CAMERA STYLES
+   ============================================ */
+
+.live-camera {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.live-camera__container {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.live-camera__video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* Detection label overlay */
+.live-camera__overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid var(--overlay-color);
+  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+.live-camera__overlay-emoji {
+  font-size: 1.2rem;
+}
+
+.live-camera__overlay-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--overlay-color);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* HUD corner brackets */
+.live-camera__bracket {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--color-primary);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0.6;
+}
+
+.live-camera__bracket--tl {
+  top: 8px; left: 8px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+.live-camera__bracket--tr {
+  top: 8px; right: 8px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+.live-camera__bracket--bl {
+  bottom: 8px; left: 8px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+.live-camera__bracket--br {
+  bottom: 8px; right: 8px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* Placeholder */
+.live-camera__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 360px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+}
+
+.live-camera__placeholder-icon {
+  font-size: 3rem;
+  opacity: 0.5;
+}
