@@ -144,3 +144,28 @@
 .pneumonia-page .result-card__reset:hover {
   background: rgba(33, 150, 243, 0.2);
 }
+
+.pneumonia-page .research-reference__note {
+  background: rgba(33, 150, 243, 0.06);
+  border-color: rgba(33, 150, 243, 0.2);
+  color: #40557a;
+}
+
+.pneumonia-page .research-reference__publications {
+  background: #ffffff;
+  border-color: rgba(13, 27, 62, 0.15);
+}
+
+.pneumonia-page .research-reference__publications summary,
+.pneumonia-page .research-reference__paper h4 {
+  color: #0d1b3e;
+}
+
+.pneumonia-page .research-reference__paper {
+  background: rgba(33, 150, 243, 0.03);
+  border-color: rgba(13, 27, 62, 0.1);
+}
+
+.pneumonia-page .research-reference__paper p {
+  color: #40557a;
+}

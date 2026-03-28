@@ -56,6 +56,16 @@
   border: 1px solid var(--accent-glow);
 }
 
+.model-card__research-badge {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 4px 10px;
+  line-height: 1.2;
+}
+
 /* Live blinking dot */
 .model-card__live-dot {
   width: 6px;

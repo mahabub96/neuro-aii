@@ -7,7 +7,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ModelCard.css';
 
-const ModelCard = ({ icon, title, description, tag, tagLive, accentColor, buttonText, path }) => {
+const ModelCard = ({ icon, title, description, tag, tagLive, researchBadge, accentColor, buttonText, path }) => {
   const navigate = useNavigate();
 
   return (
@@ -23,6 +23,8 @@ const ModelCard = ({ icon, title, description, tag, tagLive, accentColor, button
         {tag}
         {tagLive && <span className="model-card__live-dot" />}
       </div>
+
+      {researchBadge && <div className="model-card__research-badge">{researchBadge}</div>}
 
       {/* Icon */}
       <div className="model-card__icon">{icon}</div>

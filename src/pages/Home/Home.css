@@ -292,6 +292,15 @@
   color: var(--color-text-muted);
 }
 
+.footer__link {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.footer__link:hover {
+  opacity: 0.85;
+}
+
 .footer__disclaimer {
   font-size: 0.75rem;
   color: var(--color-text-muted);

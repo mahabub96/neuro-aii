@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import LiveCamera from '../../components/LiveCamera/LiveCamera.jsx';
 import StatusBar from '../../components/StatusBar/StatusBar.jsx';
 import AlertBanner from '../../components/AlertBanner/AlertBanner.jsx';
+import ResearchReference from '../../components/ResearchReference/ResearchReference.jsx';
 import useCamera from '../../hooks/useCamera.js';
 import useDrowsinessDetection from '../../hooks/useDrowsinessDetection.js';
 import useSessionStats from '../../hooks/useSessionStats.js';
@@ -17,13 +18,14 @@ const DrowsinessDetection = () => {
   const navigate = useNavigate();
   const { videoRef, isActive, error: camError, startCamera, stopCamera } = useCamera();
   const { stats, startSession, stopSession, resetSession, recordEvent, formatDuration } = useSessionStats();
-  const { prediction, status, isRunning, startDetection, stopDetection } = useDrowsinessDetection(videoRef, recordEvent);
+  const { prediction, status, isRunning, apiError, startDetection, stopDetection } = useDrowsinessDetection(videoRef, recordEvent);
 
   const handleStart = async () => {
-    await startCamera();
+    const cameraStarted = await startCamera();
+    if (!cameraStarted) return;
+
     startSession();
-    /* Small delay to let camera initialize before detection starts */
-    setTimeout(() => startDetection(), 500);
+    startDetection();
   };
 
   const handleStop = () => {
@@ -81,10 +83,10 @@ const DrowsinessDetection = () => {
         <div className="drowsy-page__camera">
           <LiveCamera videoRef={videoRef} isActive={isActive} prediction={prediction} />
 
-          {camError && (
+          {(camError || apiError) && (
             <div className="drowsy-page__cam-error">
               <span>📷</span>
-              <p>{camError}</p>
+              <p>{camError || apiError}</p>
             </div>
           )}
         </div>
@@ -130,6 +132,8 @@ const DrowsinessDetection = () => {
             Status: <strong>{stats.isMonitoring ? '🟢 Monitoring' : '⏸️ Stopped'}</strong>
           </div>
         </div>
+
+        <ResearchReference model="drowsiness" />
       </div>
     </div>
   );

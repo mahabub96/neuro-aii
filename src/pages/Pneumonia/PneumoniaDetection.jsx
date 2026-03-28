@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ImageUploader from '../../components/ImageUploader/ImageUploader.jsx';
 import ResultCard from '../../components/ResultCard/ResultCard.jsx';
-import { analyzePneumonia } from '../../utils/api.js';
+import ResearchReference from '../../components/ResearchReference/ResearchReference.jsx';
+import { analyzePneumonia } from '../../services/api/index.js';
 import './PneumoniaDetection.css';
 
 const PneumoniaDetection = () => {
@@ -100,6 +101,8 @@ const PneumoniaDetection = () => {
             onReset={handleReset}
           />
         )}
+
+        <ResearchReference model="pneumonia" />
       </div>
     </div>
   );

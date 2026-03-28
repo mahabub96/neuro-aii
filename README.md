@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# NeuroAI Frontend
 
-## Project info
+React + Vite frontend for:
+- Brain tumor detection
+- Pneumonia detection
+- Driver drowsiness monitoring
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Professional folder structure
 
-## How can I edit this code?
+- `src/config/`
+  - Centralized environment and app config
+- `src/services/api/`
+  - `client.js`: shared HTTP helpers
+  - `predictionService.js`: model-specific API calls
+  - `index.js`: service exports
+- `src/pages/`
+  - Feature pages (BrainTumor, Pneumonia, Drowsiness)
+- `src/components/`
+  - Reusable UI components
+- `src/hooks/`
+  - Reusable behavior hooks
+- `src/utils/`
+  - Utilities (frame capture, audio, legacy API shim)
 
-There are several ways of editing your application.
+## Backend wiring
 
-**Use Lovable**
+The frontend reads backend base URL from `VITE_API_BASE_URL`.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. Copy environment template:
+   - `cp .env.example .env`
+2. Set backend URL in `.env`:
+   - Local: `VITE_API_BASE_URL=http://127.0.0.1:8000`
+   - Render: `VITE_API_BASE_URL=https://your-backend-name.onrender.com`
 
-Changes made via Lovable will be committed automatically to this repo.
+## Run locally
 
-**Use your preferred IDE**
+1. Install dependencies:
+   - `npm install`
+2. Start dev server:
+   - `npm run dev`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Build
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- `npm run build`
 
-Follow these steps:
+## Notes
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Pneumonia model can be replaced later with a lightweight model without frontend code changes, as long as backend endpoint and response schema stay the same.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Deploy frontend on Netlify
 
-# Step 3: Install the necessary dependencies.
-npm i
+This folder includes `netlify.toml` for frontend-only deployment.
+If you deploy from the project root as a monorepo, use the root `netlify.toml`.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. Create a new site from Git in Netlify.
+2. Select this repository.
+3. Netlify will use:
+  - Base directory: `apps/frontend`
+  - Build command: `npm run build`
+  - Publish directory: `dist`
+4. Set environment variable in Netlify:
+  - `VITE_API_BASE_URL=https://YOUR_SPACE_URL`
+5. Deploy and verify API calls from the browser.
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+For full frontend + backend deployment flow, see `docs/deploy-netlify-hf.md`.

@@ -6,7 +6,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ImageUploader from '../../components/ImageUploader/ImageUploader.jsx';
 import ResultCard from '../../components/ResultCard/ResultCard.jsx';
-import { analyzeBrainTumor } from '../../utils/api.js';
+import ResearchReference from '../../components/ResearchReference/ResearchReference.jsx';
+import { analyzeBrainTumor } from '../../services/api/index.js';
 import './BrainTumorDetection.css';
 
 const BrainTumorDetection = () => {
@@ -100,6 +101,8 @@ const BrainTumorDetection = () => {
             onReset={handleReset}
           />
         )}
+
+        <ResearchReference model="brain" />
       </div>
     </div>
   );

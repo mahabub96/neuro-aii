@@ -87,6 +87,7 @@ const Home = () => {
               title="Pneumonia Detection"
               description="Upload a chest X-ray and get instant AI-powered diagnosis with confidence score"
               tag="Medical Imaging"
+              researchBadge="🔄 Paper Under Review"
               accentColor="#2196F3"
               buttonText="Launch Model"
               path="/pneumonia"
@@ -96,6 +97,7 @@ const Home = () => {
               title="Brain Tumor Detection"
               description="Analyze MRI brain scans to detect tumors with deep learning precision"
               tag="Medical Imaging"
+              researchBadge="✅ IEEE ICECTE 2026 Published"
               accentColor="#9C27B0"
               buttonText="Launch Model"
               path="/brain-tumor"
@@ -106,6 +108,7 @@ const Home = () => {
               description="Real-time driver monitoring via webcam. Get instant alerts when drowsiness is detected"
               tag="Live Detection"
               tagLive
+              researchBadge="🔄 Paper Under Review"
               accentColor="#F44336"
               buttonText="Launch Live"
               path="/drowsiness"
@@ -177,9 +180,19 @@ const Home = () => {
               <span className="footer__logo">◆ NeuroSense AI</span>
               <p className="footer__tagline">Intelligent Detection. Real-Time Precision.</p>
             </div>
-            <p className="footer__built">Built with ❤️ using React + FastAPI</p>
+            <p className="footer__built">
+              Built by{' '}
+              <a
+                className="footer__link"
+                href="https://example.com/portfolio"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Mahabub Alam
+              </a>
+            </p>
             <p className="footer__disclaimer">
-              ⚠️ This platform is for educational purposes only. Not a substitute for medical diagnosis.
+              ⚠️ Important Disclaimer: This platform features AI models developed based on peer-reviewed and under-review research. The brain tumour detection model is published in IEEE Xplore, while the pneumonia detection and drowsiness detection models have papers currently under peer review. All models are trained on validated datasets, however, AI models can make errors regardless of accuracy levels. This platform is intended for educational and research purposes only and is not a substitute for professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
             </p>
           </div>
         </div>

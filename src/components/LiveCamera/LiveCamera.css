@@ -10,6 +10,9 @@
 
 .live-camera__container {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 300px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #000;
@@ -18,8 +21,18 @@
 
 .live-camera__video {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
   border-radius: var(--radius-lg);
+}
+
+.live-camera__container.is-inactive .live-camera__video {
+  opacity: 0;
+}
+
+.live-camera__container.is-active .live-camera__video {
+  opacity: 1;
 }
 
 /* Detection label overlay */
@@ -84,16 +97,16 @@
 
 /* Placeholder */
 .live-camera__placeholder {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 360px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-lg);
+  background: rgba(0, 0, 0, 0.45);
   color: var(--color-text-secondary);
+  z-index: 3;
 }
 
 .live-camera__placeholder-icon {
