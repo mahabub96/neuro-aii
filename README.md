@@ -80,19 +80,6 @@ DevOps & Deployment: Docker, cloud platforms (HuggingFace Spaces, Netlify), envi
 
 Computer Vision: Image preprocessing, medical imaging analysis, real-time video processing, MediaPipe integration
 
- Repository Structure
-
-
-neuroai/
-├── apps/
-│ ├── backend/ (FastAPI inference server)
-│ └── frontend/ (React + Vite client)
-├── ml/ (Custom models)
-│ ├── brain_tumor/ (PyTorch ensemble checkpoint)
-│ ├── pneumonia/ (TensorFlow Keras model)
-│ └── drowsiness/ (MobileNetV2 checkpoint)
-└── docs/ (Deployment & implementation guides)
-
 
 
 
