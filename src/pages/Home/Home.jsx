@@ -192,7 +192,7 @@ const Home = () => {
               </a>
             </p>
             <p className="footer__disclaimer">
-              ⚠️ Important Disclaimer: This platform features AI models developed based on peer-reviewed and under-review research. The brain tumour and pneumonia detection papers are published by IEEE, while the drowsiness detection paper is currently under peer review. All models are trained on validated datasets, however, AI models can make errors regardless of accuracy levels. This platform is intended for educational and research purposes only and is not a substitute for professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
+              ⚠️ Important Disclaimer: This platform features AI models developed from published and ongoing research. The brain tumour and pneumonia detection papers are published by IEEE, while the drowsiness detection paper is currently under peer review. Although the models have been evaluated on research datasets, AI predictions can be incorrect regardless of reported accuracy. This project is deployed on free-tier hosting services with limited computing resources and is intended for demonstrations, education, and research. Its current deployment is not designed for production-scale use. Concurrent usage may result in slower predictions, delayed live alerts, or temporary service interruptions. This platform is not a substitute for professional medical diagnosis or a certified driver safety system. Always consult a qualified healthcare professional for medical decisions.
             </p>
           </div>
         </div>
