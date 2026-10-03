@@ -6,8 +6,8 @@
 /**
  * Capture a single frame from a video element
  * @param {HTMLVideoElement} videoElement - The video element to capture from
- * @param {number} width - Optional output width
- * @param {number} height - Optional output height
+ * @param {number} width - Optional maximum output width
+ * @param {number} height - Optional maximum output height
  * @param {number} quality - JPEG quality from 0 to 1 (default 0.85)
  * @returns {string|null} - Base64-encoded JPEG string, or null if failed
  */
@@ -16,17 +16,25 @@ export const captureFrame = (videoElement, width, height, quality = 0.85) => {
     return null;
   }
 
-  const nativeWidth = videoElement.videoWidth || 640;
-  const nativeHeight = videoElement.videoHeight || 480;
-  const outputWidth = width || Math.min(nativeWidth, 640);
-  const outputHeight = height || Math.min(nativeHeight, 480);
+  const nativeWidth = videoElement.videoWidth;
+  const nativeHeight = videoElement.videoHeight;
+  if (!nativeWidth || !nativeHeight) return null;
+
+  // Fit the full frame within the requested bounds without stretching or cropping.
+  const scale = Math.min(
+    (width || 640) / nativeWidth,
+    (height || 480) / nativeHeight,
+    1,
+  );
+  const outputWidth = Math.max(1, Math.round(nativeWidth * scale));
+  const outputHeight = Math.max(1, Math.round(nativeHeight * scale));
 
   const canvas = document.createElement('canvas');
   canvas.width = outputWidth;
   canvas.height = outputHeight;
 
   const ctx = canvas.getContext('2d');
-  // Test: mirror captured frames to match the visible camera preview.
+  // Mirror captured frames to match the visible camera preview.
   ctx.translate(outputWidth, 0);
   ctx.scale(-1, 1);
   ctx.drawImage(videoElement, 0, 0, outputWidth, outputHeight);
