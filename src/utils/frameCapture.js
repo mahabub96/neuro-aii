@@ -26,6 +26,9 @@ export const captureFrame = (videoElement, width, height, quality = 0.85) => {
   canvas.height = outputHeight;
 
   const ctx = canvas.getContext('2d');
+  // Test: mirror captured frames to match the visible camera preview.
+  ctx.translate(outputWidth, 0);
+  ctx.scale(-1, 1);
   ctx.drawImage(videoElement, 0, 0, outputWidth, outputHeight);
 
   /* Use balanced quality for face landmark reliability in low light. */
