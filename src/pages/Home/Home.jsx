@@ -87,7 +87,7 @@ const Home = () => {
               title="Pneumonia Detection"
               description="Upload a chest X-ray and get instant AI-powered diagnosis with confidence score"
               tag="Medical Imaging"
-              researchBadge="🔄 Paper Under Review"
+              researchBadge="✅ IEEE QPAIN 2026 Published"
               accentColor="#2196F3"
               buttonText="Launch Model"
               path="/pneumonia"
@@ -157,8 +157,8 @@ const Home = () => {
               <span className="stats__label">AI Models</span>
             </div>
             <div className="stats__item">
-              <span className="stats__value">{accuracyCount}%+</span>
-              <span className="stats__label">Accuracy</span>
+              <span className="stats__value">{accuracyCount}%</span>
+              <span className="stats__label">Brain Tumour Study Accuracy (Rounded)</span>
             </div>
             <div className="stats__item">
               <span className="stats__value">⚡</span>
@@ -184,7 +184,7 @@ const Home = () => {
               Built by{' '}
               <a
                 className="footer__link"
-                href="https://example.com/portfolio"
+                href="https://mahabubalamm.netlify.app"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -192,7 +192,7 @@ const Home = () => {
               </a>
             </p>
             <p className="footer__disclaimer">
-              ⚠️ Important Disclaimer: This platform features AI models developed based on peer-reviewed and under-review research. The brain tumour detection model is published in IEEE Xplore, while the pneumonia detection and drowsiness detection models have papers currently under peer review. All models are trained on validated datasets, however, AI models can make errors regardless of accuracy levels. This platform is intended for educational and research purposes only and is not a substitute for professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
+              ⚠️ Important Disclaimer: This platform features AI models developed based on peer-reviewed and under-review research. The brain tumour and pneumonia detection papers are published by IEEE, while the drowsiness detection paper is currently under peer review. All models are trained on validated datasets, however, AI models can make errors regardless of accuracy levels. This platform is intended for educational and research purposes only and is not a substitute for professional medical diagnosis. Always consult a qualified healthcare professional for medical decisions.
             </p>
           </div>
         </div>
