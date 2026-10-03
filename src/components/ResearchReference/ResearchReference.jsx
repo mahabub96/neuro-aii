@@ -8,7 +8,9 @@ const modelNotes = {
     link: 'https://doi.org/10.1109/ICECTE69292.2026.11429333',
   },
   pneumonia: {
-    text: '🔬 Research-Backed Model — This model is based on our ongoing research currently under peer review for publication. The model architecture and methodology have been developed following rigorous academic standards. Publication details will be updated upon acceptance.',
+    text: '🔬 Research-Backed Model — This model is based on our published IEEE QPAIN 2026 research, A Lightweight Dual-Branch MobileNet Architecture for Precise Pneumonia Detection from Chest X-ray Images. The study reports 98.82% accuracy and 0.67 GFLOPs using a dual-branch MobileNet with squeeze-and-excitation attention and image preprocessing.',
+    linkLabel: '📄 Read the full paper via DOI →',
+    link: 'https://doi.org/10.1109/QPAIN69676.2026.11546459',
   },
   drowsiness: {
     text: '🔬 Research-Backed Model — This model is based on our ongoing research currently under peer review for publication. The model architecture and methodology have been developed following rigorous academic standards. Publication details will be updated upon acceptance.',
@@ -41,7 +43,7 @@ const ResearchReference = ({ model }) => {
               <strong>Title:</strong> A Multiple Backbone Feature Fusion Ensemble CNN for Brain Tumor
               Detection and Classification from MRI Images
             </p>
-            <p><strong>Authors:</strong> Mahabub Alam, Shadman Yaser, Abdur Rahman</p>
+            <p><strong>Authors:</strong> Shadman Yaser, Abdur Rahman, Mahabub Alam</p>
             <p>
               <strong>Published In:</strong> 2026 5th International Conference on Electrical, Computer &
               Telecommunication Engineering (ICECTE)
@@ -61,11 +63,18 @@ const ResearchReference = ({ model }) => {
           </article>
 
           <article className="research-reference__paper">
-            <h4>Paper 2 — Pneumonia Detection [🔄 Under Review]</h4>
-            <p><strong>Title:</strong> To be announced upon acceptance</p>
-            <p><strong>Authors:</strong> Mahabub Alam and team</p>
-            <p><strong>Status:</strong> Currently under peer review</p>
-            <p>Details will be updated upon acceptance</p>
+            <h4>Paper 2 — Pneumonia Detection [✅ Published]</h4>
+            <p><strong>Title:</strong> A Lightweight Dual-Branch MobileNet Architecture for Precise Pneumonia Detection from Chest X-ray Images</p>
+            <p><strong>Authors:</strong> Mahabub Alam, Abdur Rahman, Shadman Yaser, Md. Abid Khan, Aziz Misher Mishu</p>
+            <p><strong>Published In:</strong> 2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence &amp; Networking (QPAIN)</p>
+            <p><strong>Publisher:</strong> IEEE</p>
+            <p><strong>Status:</strong> Published</p>
+            <p>
+              <strong>DOI:</strong>{' '}
+              <a href="https://doi.org/10.1109/QPAIN69676.2026.11546459" target="_blank" rel="noreferrer">
+                10.1109/QPAIN69676.2026.11546459
+              </a>
+            </p>
           </article>
 
           <article className="research-reference__paper">
